@@ -19,7 +19,7 @@ class Product(models.Model):
 
 class DailyProduct(models.Model):
     date = models.DateField()
-    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True)
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=False)
     quantity = models.IntegerField(null=False, blank=False)
     total_amount = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
 

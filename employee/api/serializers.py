@@ -18,21 +18,46 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class DailyProductSerializer(serializers.ModelSerializer):
+    product = serializers.PrimaryKeyRelatedField(queryset=Product.objects.all(),  write_only=True)
+    product_name = serializers.CharField(source='product.name', read_only=True)
+
     class Meta:
         model = DailyProduct
-        fields = ['id', 'date', 'product', 'quantity', 'total_amount']
-        extra_kwargs = {'id': {'read_only': True}, 'total_amount': {'read_only': True}}
+        fields = ['id', 'date', 'product', 'product_name', 'quantity', 'total_amount']
+        extra_kwargs = {
+            'id': {'read_only': True},
+            'total_amount': {'read_only': True}
+        }
 
 
 class AttendanceSerializer(serializers.ModelSerializer):
+    employee_name = serializers.ReadOnlyField(source='employee.full_name')
+
     class Meta:
         model = Attendance
-        fields = ['id', 'employee', 'check_in', 'check_out', 'worked_hours']
-        extra_kwargs = {'id': {'read_only': True}}
+        fields = ['id', 'employee', 'employee_name', 'check_in', 'check_out', 'worked_hours']
+        read_only_fields = ['worked_hours']
 
 
-# class EmployeeCameSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model =
-#         fields = ['id', 'employee', 'check_in']
-#         extra_kwargs = {'id': {'read_only': True}}
+class CheckInRequestSerializer(serializers.Serializer):
+    employee_ids = serializers.ListField(
+        child=serializers.IntegerField(),
+        required=True,
+        help_text="List of employee IDs to check in"
+    )
+    check_in_time = serializers.DateTimeField(
+        required=True,
+        help_text="Custom check-in time (defaults to current time if not provided)"
+    )
+
+
+class CheckOutRequestSerializer(serializers.Serializer):
+    employee_ids = serializers.ListField(
+        child=serializers.IntegerField(),
+        required=True,
+        help_text="List of employee IDs to check out"
+    )
+    check_out_time = serializers.DateTimeField(
+        required=True,
+        help_text="Custom check-out time (defaults to current time if not provided)"
+    )
