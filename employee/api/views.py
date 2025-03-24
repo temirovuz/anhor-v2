@@ -32,7 +32,7 @@ class CheckInView(views.APIView):
         available_employees = Employee.objects.exclude(
             attendances__check_in__date=current_date,
             attendances__check_out__isnull=True
-        ).select_related('attendances')
+        )
 
         serializer = EmployeeSerializer(available_employees, many=True)
         return Response({
@@ -53,7 +53,7 @@ class CheckInView(views.APIView):
         ).exclude(
             attendances__check_in__date=check_in_time.date(),
             attendances__check_out__isnull=True
-        ).select_related('attendances')
+        )
 
         attendances = [
             Attendance(employee=employee, check_in=check_in_time)
@@ -73,7 +73,7 @@ class CheckInView(views.APIView):
             'success': True,
             'message': f'Successfully checked in {len(attendances)} employees',
             'processed': processed_ids,
-            'not_processed': list(not_processed),
+            'not_processed': list(invalid_ids),
             'attendances': AttendanceSerializer(attendances, many=True).data
         })
 
@@ -84,9 +84,8 @@ class CheckOutView(views.APIView):
         current_date = timezone.now().date()
 
         attendances = Attendance.objects.filter(
-            check_in__date=current_date,
             check_out__isnull=True
-        ).select_related('employee')
+        )
 
         employees = [attendance.employee for attendance in attendances]
         serializer = EmployeeSerializer(employees, many=True)
