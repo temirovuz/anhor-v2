@@ -78,124 +78,124 @@ bildiradi va tushunish oson bo'lishi uchun turlarga bo'lingan.
 
 * ``Post method``
 
-
-    {
-        "status": "yangi",
-        "full_name": "Temirov Muhammad"
-    }
+   
+       {
+           "status": "yangi",
+           "full_name": "Temirov Muhammad"
+       }
 
 * ``Get method``
 
 
-    [
-      {
-        "id": 3,
-        "status": "yangi",
-        "full_name": "user - 1"
-      },
-      {
-        "id": 4,
-        "status": "yangi",
-        "full_name": "user - 2"
-      },
-      {
-        "id": 5,
-        "status": "yangi",
-        "full_name": "user - 3"
-      },
-      {
-        "id": 6,
-        "status": "yangi",
-        "full_name": "user - 4"
-      },
-      {
-        "id": 7,
-        "status": "yangi",
-        "full_name": "user - 5"
-      }
-    ]
+       [
+         {
+           "id": 3,
+           "status": "yangi",
+           "full_name": "user - 1"
+         },
+         {
+           "id": 4,
+           "status": "yangi",
+           "full_name": "user - 2"
+         },
+         {
+           "id": 5,
+           "status": "yangi",
+           "full_name": "user - 3"
+         },
+         {
+           "id": 6,
+           "status": "yangi",
+           "full_name": "user - 4"
+         },
+         {
+           "id": 7,
+           "status": "yangi",
+           "full_name": "user - 5"
+         }
+       ]
 
 ### Daily Production example
 
 * ``Post method``
 
-
-    {
-      "date": "2025-03-24",
-      "product": 4,
-      "quantity": 1000
-    }
+   
+       {
+         "date": "2025-03-24",
+         "product": 4,
+         "quantity": 1000
+       }
 
 * ``Get method``
 
-
-    [
-      {
-        "id": 1,
-        "date": "2025-03-24",
-        "product_name": "Anhor 1 litr",
-        "quantity": 10,
-        "total_amount": "1000.00"
-      },
-      {
-        "id": 2,
-        "date": "2025-03-24",
-        "product_name": "shafaq 1 litr",
-        "quantity": 100,
-        "total_amount": "12000.00"
-      },
-      {
-        "id": 3,
-        "date": "2025-03-24",
-        "product_name": "4.2 anhor",
-        "quantity": 1000,
-        "total_amount": "250000.00"
-      }
-    ]
+   
+       [
+         {
+           "id": 1,
+           "date": "2025-03-24",
+           "product_name": "Anhor 1 litr",
+           "quantity": 10,
+           "total_amount": "1000.00"
+         },
+         {
+           "id": 2,
+           "date": "2025-03-24",
+           "product_name": "shafaq 1 litr",
+           "quantity": 100,
+           "total_amount": "12000.00"
+         },
+         {
+           "id": 3,
+           "date": "2025-03-24",
+           "product_name": "4.2 anhor",
+           "quantity": 1000,
+           "total_amount": "250000.00"
+         }
+       ]
 
 ### Attendance check In example
 
 * ``Post method``
-
-
-    {
-       "employee_ids": [2, 3, 5, 6, 7],
-       "check_in_time": "2025-03-23T09:00:00Z"
-    }
+   
+   
+       {
+          "employee_ids": [2, 3, 5, 6, 7],
+          "check_in_time": "2025-03-23T09:00:00Z"
+       }
 
 * ``Get method``
 
-
-    {
-      "count": 13,
-      "employees": [
-        {
-            "id": 3,
-            "status": "yangi",
-            "full_name": "user - 1"
-        },
-        {
-            "id": 4,
-            "status": "yangi",
-            "full_name": "user - 2"
-        },
-        {
-            "id": 5,
-            "status": "yangi",
-            "full_name": "user - 3"
-        },
-        {
-            "id": 6,
-            "status": "yangi",
-            "full_name": "user - 4"
-        },
-        {
-            "id": 7,
-            "status": "yangi",
-            "full_name": "user - 5"
-        }
-      ]
-    }
+   
+       {
+         "count": 13,
+         "employees": [
+           {
+               "id": 3,
+               "status": "yangi",
+               "full_name": "user - 1"
+           },
+           {
+               "id": 4,
+               "status": "yangi",
+               "full_name": "user - 2"
+           },
+           {
+               "id": 5,
+               "status": "yangi",
+               "full_name": "user - 3"
+           },
+           {
+               "id": 6,
+               "status": "yangi",
+               "full_name": "user - 4"
+           },
+           {
+               "id": 7,
+               "status": "yangi",
+               "full_name": "user - 5"
+           }
+         ]
+       }
 
 
 
@@ -204,86 +204,86 @@ bildiradi va tushunish oson bo'lishi uchun turlarga bo'lingan.
 * ``Post method``
 
 
-    {
-       "employee_ids": [2, 3, 5, 6, 7],
-       "check_out_time": "2025-03-24T09:00:00Z"
-    }
+       {
+          "employee_ids": [2, 3, 5, 6, 7],
+          "check_out_time": "2025-03-24T09:00:00Z"
+       }
 
 * ``Get method``
 
-
-    {
-      "success": true,
-      "message": "Successfully checked out 5 employees",
-      "processed": [
-        {
-            "id": 2,
-            "status": "yangi",
-            "full_name": "Temirov Jahaongir"
-        },
-        {
-            "id": 3,
-            "status": "yangi",
-            "full_name": "user - 1"
-        },
-        {
-            "id": 5,
-            "status": "yangi",
-            "full_name": "user - 3"
-        },
-        {
-            "id": 6,
-            "status": "yangi",
-            "full_name": "user - 4"
-        },
-        {
-            "id": 7,
-            "status": "yangi",
-            "full_name": "user - 5"
-        }
-      ],
-      "not_processed": [],
-      "attendances": [
-        {
-            "id": 6,
-            "employee": 2,
-            "employee_name": "Temirov Jahaongir",
-            "check_in": "2025-03-23T14:00:00+05:00",
-            "check_out": "2025-03-24T14:00:00+05:00",
-            "worked_hours": "24.00"
-        },
-        {
-            "id": 7,
-            "employee": 3,
-            "employee_name": "user - 1",
-            "check_in": "2025-03-23T14:00:00+05:00",
-            "check_out": "2025-03-24T14:00:00+05:00",
-            "worked_hours": "24.00"
-        },
-        {
-            "id": 8,
-            "employee": 5,
-            "employee_name": "user - 3",
-            "check_in": "2025-03-23T14:00:00+05:00",
-            "check_out": "2025-03-24T14:00:00+05:00",
-            "worked_hours": "24.00"
-        },
-        {
-            "id": 9,
-            "employee": 6,
-            "employee_name": "user - 4",
-            "check_in": "2025-03-23T14:00:00+05:00",
-            "check_out": "2025-03-24T14:00:00+05:00",
-            "worked_hours": "24.00"
-        },
-        {
-            "id": 10,
-            "employee": 7,
-            "employee_name": "user - 5",
-            "check_in": "2025-03-23T14:00:00+05:00",
-            "check_out": "2025-03-24T14:00:00+05:00",
-            "worked_hours": "24.00"
-        }
-     ]
-
+   
+       {
+         "success": true,
+         "message": "Successfully checked out 5 employees",
+         "processed": [
+           {
+               "id": 2,
+               "status": "yangi",
+               "full_name": "Temirov Jahaongir"
+           },
+           {
+               "id": 3,
+               "status": "yangi",
+               "full_name": "user - 1"
+           },
+           {
+               "id": 5,
+               "status": "yangi",
+               "full_name": "user - 3"
+           },
+           {
+               "id": 6,
+               "status": "yangi",
+               "full_name": "user - 4"
+           },
+           {
+               "id": 7,
+               "status": "yangi",
+               "full_name": "user - 5"
+           }
+         ],
+         "not_processed": [],
+         "attendances": [
+           {
+               "id": 6,
+               "employee": 2,
+               "employee_name": "Temirov Jahaongir",
+               "check_in": "2025-03-23T14:00:00+05:00",
+               "check_out": "2025-03-24T14:00:00+05:00",
+               "worked_hours": "24.00"
+           },
+           {
+               "id": 7,
+               "employee": 3,
+               "employee_name": "user - 1",
+               "check_in": "2025-03-23T14:00:00+05:00",
+               "check_out": "2025-03-24T14:00:00+05:00",
+               "worked_hours": "24.00"
+           },
+           {
+               "id": 8,
+               "employee": 5,
+               "employee_name": "user - 3",
+               "check_in": "2025-03-23T14:00:00+05:00",
+               "check_out": "2025-03-24T14:00:00+05:00",
+               "worked_hours": "24.00"
+           },
+           {
+               "id": 9,
+               "employee": 6,
+               "employee_name": "user - 4",
+               "check_in": "2025-03-23T14:00:00+05:00",
+               "check_out": "2025-03-24T14:00:00+05:00",
+               "worked_hours": "24.00"
+           },
+           {
+               "id": 10,
+               "employee": 7,
+               "employee_name": "user - 5",
+               "check_in": "2025-03-23T14:00:00+05:00",
+               "check_out": "2025-03-24T14:00:00+05:00",
+               "worked_hours": "24.00"
+           }
+        ]
+   
     }
